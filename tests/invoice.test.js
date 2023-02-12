@@ -6,7 +6,7 @@ import {Discount} from "../src/Pricing";
 describe("Invoice Tests", function() {
 
     describe("InvoiceItem Tests", function() {
-        test("Non-discounted total", function () {
+        test("Total without any discount", function () {
             const item = new InvoiceItem('standard');
             item.price = 123.123;
             expect(item.total()).toEqual(123.123);
@@ -27,7 +27,7 @@ describe("Invoice Tests", function() {
     });
 
     describe("Invoice Tests", function() {
-        test("Non-discounted total", function () {
+        test("Total without any discount", function () {
             const bill = new Invoice(['standard', 'standard']);
             bill.items[0].price = 123.123;
             bill.items[1].price = 123.123;

@@ -1,7 +1,49 @@
 
 # High Level Solution
 
-** TBD **
+## Schema
+
+**Customers Table**
+|Customer Id |Customer Name |
+|-----|------------|
+|**1** |SecondBite
+|**2** |Axil Coffee Roasters
+|**3** |MYER
+|**4** |default
+|**..** |...
+
+**Products Table**
+|Product Code|Product Name|Product Description |Retail Price|
+|-----|-----|------------|------------|
+|classic|**Classic Ad** |Offers the most basic level of advertisement | $269.99
+|standout|**Stand out Ad**|Allows advertisers to use a company logo and use a longer presentation text|$322.99
+|premium|**Premium Ad**|Same benefits as Standout Ad, but also puts the advertisement atthe top of the results, allowing higher visibility|$394.99
+|..|..|........|...
+
+
+**Deals**
+
+
+A) PriceDeals Table
+|Customer Id |Product Code |Price|
+|-----|------------|-----|
+|**1** |standout|299.99|
+|**2** |premium|389.99|
+|.. |...|...|
+
+
+B)xForyDeals Table
+|Customer Id |Product Code |x units|y units|
+|-----|------------|-----|-----|
+|**1**|classic|3|2|
+|**1**|classic|30|13|
+|**3**|standout|5|4|
+
+** The tables could be RDS or Nosql as well depending on the volume of queries/Opex. A separate UI for Operations team could be made available that directly updates information on these tables. This UI/interface would be the core application component with the help of which the pricing rules and offer rules could be maintained over a period of time. In a typical production setup, a timestamp field called "business_end_date" could be introduced to end-date a particular row so that there's room for multiple similar rows in the same table(Design pattern: Temporal data). 
+
+
+# Workflow
+
 
 # Assumptions 
 1) The discount rules, i.e. respective prices as well as the number of offers for a particular customer is going to be changed in future(an ongoing activity throughout the life of the service). 

@@ -3,11 +3,11 @@
  import {PricingRules} from "../src/Pricing";
  import {CheckOut} from "../src/CheckOut";
  
- describe("Integrated Checkout Tests", function() {
+ describe("Checkout Integration tests", function() {
  
      describe("Example Tests", function() {
  
-         test("Example Test 1", function () {
+         test("Example Test #1", function () {
              const customerId = 4;
              const pricingRules = PricingRules.load(customerId);
              const checkOut = new CheckOut(pricingRules);
@@ -19,7 +19,7 @@
              expect(checkOut.total()).toBeCloseTo(987.97, 5);
          });
  
-         test("Example Test 2", function () {
+         test("Example Test #2", function () {
              const customerId = 1;
              const pricingRules = PricingRules.load(customerId);
              const checkOut = new CheckOut(pricingRules);
@@ -32,7 +32,7 @@
              expect(checkOut.total()).toBeCloseTo(934.97, 5);
          });
  
-         test("Example Test 3", function () {
+         test("Example Test #3", function () {
              const customerId = 2;
              const pricingRules = PricingRules.load(customerId);
              const checkOut = new CheckOut(pricingRules);

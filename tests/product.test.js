@@ -14,7 +14,7 @@ describe("Product Tests", function() {
         ]).toEqual([
             'test1',
             'Test1',
-            'Lorem Ipsum Blah',
+            'Lorem Ipsum',
             394.99,
         ]);
     });
